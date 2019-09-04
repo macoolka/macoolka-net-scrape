@@ -1,0 +1,63 @@
+{
+  "name": "macoolka-net-scrape",
+  "version": "0.2.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "fastspeeed@gmail.com",
+  "scripts": {
+    "reinstall": "rm -rf node_modules/ && yarn install",
+    "clean": "rm -rf lib/ coverage/ ",
+    "lint": "tslint -p tsconfig.json",
+    "lint:fix": "tslint -p tsconfig.json --fix",
+    "test": "jest",
+    "build": "rm -rf lib/ && tsc ",
+    "precommit": "npm run lint",
+    "prepush": "npm run test",
+    "all": "npm run clean && tsc && jest  --coverage && tslint -p tsconfig.json",
+    "coverage": "rimraf coverage && jest  --coverage"
+  },
+  "keywords": [
+    "macoolka",
+    "typescript",
+    "net",
+    "ping",
+    "functional-programming"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(./src/*|\\.(test|spec))\\.(ts|tsx)$"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macoolka/macoolka-net-scrape.git"
+  },
+  "homepage": "https://github.com/macoolka/macoolka-net-scrape",
+  "dependencies": {
+    "fp-ts": "^2.0.2",
+    "macoolka-app": "^0.2.0",
+    "scrape-it": "^5.1.4"
+  },
+ 
+  "devDependencies": {
+    "@types/cheerio": "^0.22.13",
+    "macoolka-typescript": "^0.2.1",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.2",
+    "@types/ping": "^0.2.0",
+    "jest": "^24.9.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.19.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.6.2"
+  }
+}
